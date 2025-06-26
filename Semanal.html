@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MFV</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+<br><br>
+<!-- Botón de inicio -->
+<section>
+  <a href="index.html"><button>Inicio</button></a>
+</section>
+
+<br><br>
+
+<!-- Ingresos -->
+<section>
+  <h2>Ingresos</h2>
+  <select id="tipo-ingreso">
+    <option value="" disabled selected>Seleccione un Ingreso</option>
+    <option value="Ofrenda">Ofrenda</option>
+    <option value="Diezmo">Diezmo</option>
+    <option value="Simpe">Simpe</option>
+    <option value="Ofrenda Especial">Ofrenda Especial</option>
+  </select>
+  <input type="number" id="monto-ingreso" placeholder="Monto">
+  <button onclick="agregarIngreso()">Agregar Ingreso</button>
+</section>
+
+<!-- Gastos -->
+<section>
+  <h2>Gastos</h2>
+  <select id="tipo-gasto">
+    <option value="" disabled selected>Seleccione un Gasto</option>
+    <option value="Salario Pastoral">Salario Pastoral</option>
+    <option value="Ayuda Social">Ayuda Social</option>
+    <option value="Luz">Luz</option>
+    <option value="Agua">Agua</option>
+    <option value="Internet">Internet</option>
+    <option value="Pago de Facturas">Pago de Facturas</option>
+    <option value="Limpieza">Limpieza</option>
+    <option value="Refrigerio">Refrigerio</option>
+    <option value="Donacion Musical">Donacion Musical</option>
+    <option value="Cena del señor">Cena del señor</option>
+  </select>
+  <input type="number" id="monto-gasto" placeholder="Monto">
+    <input type="text" id="descripcion-gasto" placeholder="Descripción">
+  <button onclick="agregarGasto()">Agregar Gasto</button>
+</section>
+
+<section>
+   <h2>Directivos que contaron el dinero</h2>
+
+  <!-- Menú para seleccionar nombre -->
+  <select id="select-directivo">
+    <option value="" disabled selected>Seleccione un Directivo</option>
+    <option value="Vianey Arias">Vianey Arias</option>
+    <option value="Jimmy Solano">Jimmy Solano</option>
+    <option value="Martha Arce">Martha Arce</option>
+    <option value="Jonathan Lopez">Jonathan Lopez</option>
+    <option value="Eddy Castro">Eddy Castro</option>
+    <option value="Maritza Castro">Maritza Castro</option>
+    <option value="Floribel Jimenez">Floribel Jimenez</option>
+    <option value="Beatriz Quiros">Beatriz Quiros</option>
+  </select>
+  <button onclick="agregarFirmante()">Agregar</button>
+</section>
+<br><br><br><br><br><br>
+
+<!-- Tabla de ingresos -->
+<section>
+  <h2>Resumen de Ingresos</h2>
+  <table id="tabla-ingresos">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Ingresos se agregarán aquí -->
+    </tbody>
+  </table>
+</section>
+
+<!-- Tabla de gastos -->
+<section>
+  <h2>Resumen de Gastos</h2>
+  <table id="tabla-gastos">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Monto</th>
+        <th>Descripción</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Gastos se agregarán aquí -->
+       <tbody>
+  <tr id="fila-salario">
+    <td>Gasto</td>
+    <td>Salario pastoral</td>
+    <td>
+      ₡<input type="number" id="salario-pastoral" value="112500" onchange="actualizarTotales()" style="width:100px;">
+    </td>
+  </tr>
+  <tr id="fila-ayuda">
+    <td>Gasto</td>
+    <td>Ayuda social (4%)</td>
+    <td id="ayuda-social-monto">₡0.00</td>
+  </tr>
+</tbody>
+
+    </tbody>
+  </table>
+</section>
+<br><br>
+<!-- Totales -->
+<section>
+  <h3>Totales</h3>
+  <p><strong>Total Ingresos:</strong> ₡<span id="total-ingresos">0.00</span></p>
+  <p><strong>Total Gastos:</strong> ₡<span id="total-gastos">0.00</span></p>
+  <p><strong>Saldo:</strong> ₡<span id="saldo-final">0.00</span></p>
+</section>
+<br><br>
+<section>
+ 
+  <!-- Tabla de firmas -->
+  <table id="tabla-firmas">
+    <thead>
+      <tr>
+        <th>Nombre del Directivo</th>
+        <th>Firma</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Se llenará con JavaScript -->
+    </tbody>
+  </table>
+</section>
+<br><br><br>
+
+
+<script src="script.js"></script>
+</body>
+</html>
