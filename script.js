@@ -37,7 +37,7 @@ function agregarGasto() {
   const tabla = document.getElementById('tabla-gastos').querySelector('tbody');
   const fila = tabla.insertRow();
 
-  fila.innerHTML = `<td>Gasto</td><td>${descripcion}</td><td>₡${monto.toFixed(2)}</td>`;
+  fila.innerHTML = `<td>${tipo}</td><td>${descripcion}</td><td>₡${monto.toFixed(2)}</td>`;
 
   // Actualizar total y saldo (solo suma este tipo de gasto)
   totalGastos += monto;
